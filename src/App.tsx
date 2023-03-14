@@ -10,16 +10,16 @@ import Login from './Pages/Login';
 function App() {
   return (
     <div className="App">
-     Hello Madhav
-     <ThemeProvider theme={myTheme}>
-      <BrowserRouter>
+      <ThemeProvider theme={myTheme}>
+       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login></Login>} />
           <Route path="/dashboard" element={<Dashboard></Dashboard>} />
           <Route path="/innerpage" element={<Innerpage></Innerpage>} />
         </Routes>
-      </BrowserRouter>
-      </ThemeProvider>
+      </BrowserRouter> 
+      </ThemeProvider> 
+    
     </div>
   );
 }
