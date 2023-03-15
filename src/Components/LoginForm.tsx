@@ -14,7 +14,7 @@ export default function LoginForm() {
   };
   return (
     <div>
-      <Typography component="h3" variant="h5" marginTop={6} color="white">
+      <Typography component="h3" variant="h5" className="login-head">
         Log In into your account
       </Typography>
       <Box component="form" noValidate onSubmit={handleSubmit} marginTop={2}>
@@ -28,7 +28,6 @@ export default function LoginForm() {
               label="First Name"
               variant="standard"
               color="warning"
-              // inputProps={{ style: inputStyle }}
               autoFocus
             />
           </Grid>
@@ -36,7 +35,6 @@ export default function LoginForm() {
           <Grid item lg={12} className="text">
             <TextField
               fullWidth
-              // className="input"
               name="password"
               label="Password"
               type="password"
@@ -55,9 +53,7 @@ export default function LoginForm() {
           variant="contained"
           sx={{ mt: 3, mb: 2, textDecoration: "none" }}
           className="login-btn"
-          onClick={() => {
-            navigate("/dashboard");
-          }}
+          onClick={() => {navigate("/dashboard");}}
         >
           LOG IN
         </Button>

@@ -4,6 +4,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -50,7 +51,6 @@ export default function BasicTabs() {
       <Box sx={{ borderBottom: 1, borderColor: "transparent" }}>
         <Tabs
           value={value}
-          
           onChange={handleChange}
           aria-label="basic tabs example"
           
@@ -63,7 +63,7 @@ export default function BasicTabs() {
         <LoginForm />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        SIGN UP
+        <SignUpForm />
       </TabPanel>
     </Box>
   );

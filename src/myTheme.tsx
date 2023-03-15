@@ -28,7 +28,6 @@ export const myTheme = createTheme({
           ":after":{
             borderBottom: "0 ",
           }
-          
         },
       },
     },
@@ -39,13 +38,14 @@ export const myTheme = createTheme({
         },
       },
     },
-    // MuiBox: {
-    //   styleOverrides: {
-    //     root: {
-    //       padding: 0,
-    //     },
-    //   },
-    // },
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          width:"100%",
+          // flexDirection:"column",
+        },
+      },
+    },
     
     MuiLink: {
       styleOverrides: {
@@ -62,10 +62,18 @@ export const myTheme = createTheme({
         },
       },
     },
-    MuiFormControl: {
+    MuiFormControlLabel: {
       styleOverrides: {
         root: {
           // paddingBottom:"6px",
+          color:"rgba(179,179,179,1)"
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color:"white"
         },
       },
     },
@@ -84,6 +92,27 @@ export const myTheme = createTheme({
         },
       },
     },
+    MuiTabs:{
+      styleOverrides:{
+        indicator:{
+          backgroundColor:"#FFFFFF"
+        },
+      },
+    },
+    MuiTextField:{
+      styleOverrides:{
+        root:{
+          backgroundColor:"transparent"
+        },
+      },
+    },
+    // MuiFormControl:{
+    //   styleOverrides:{
+    //     root:{
+    //       backgroundColor:"transparent"
+    //     },
+    //   },
+    // },
   },
 
   palette: {
