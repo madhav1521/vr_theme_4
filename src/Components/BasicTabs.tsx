@@ -39,7 +39,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(props:any) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -48,22 +48,26 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "transparent" }}>
+      <Box >
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
           
         >
-          <Tab label="LOGIN" className="tabs" {...a11yProps(0)} />
-          <Tab label=" SIGN UP" className="tabs" {...a11yProps(1)} />
+          <Tab label={props.label1} className="tabs" {...a11yProps(0)} />
+          <Tab label={props.label2} className="tabs" {...a11yProps(1)} />
+          <Tab label={props.label3} className="tabs" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <LoginForm />
+        {props.panel1}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <SignUpForm />
+        {props.panel2}
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        {props.panel3}
       </TabPanel>
     </Box>
   );
