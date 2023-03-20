@@ -19,8 +19,8 @@ export default function Sticker(props: any) {
                             <Typography component="h6" variant="body2" className="month">Since Last Month</Typography>
                         </div>
                     </div>
-                    <div>
-                        <img src={props.cardimg} alt="" className='img-fluid'/>
+                    <div className='right-card'>
+                        <img src={props.cardimg} alt="" className='img-fluid sticker-img'/>
                     </div>
                 </Box>
             </Card>

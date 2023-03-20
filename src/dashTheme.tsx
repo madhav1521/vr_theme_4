@@ -51,6 +51,28 @@ export const dashTheme = createTheme({
             },
         },
       },
+      MuiPopover: {
+        styleOverrides: {
+          paper: {
+            color:"white!important",
+            backgroundColor:"#0F1E4E",
+            // boxShadow: "0px 0px 19px rgba(0, 0, 0, 0.17)",
+            padding:"20px",
+            gap:"10px"
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            // backgroundColor:"#0F1E4E",
+            color:"white",
+            // boxShadow: "0px 0px 19px rgba(0, 0, 0, 0.17)",
+            padding:"20px",
+            gap:"10px"
+          },
+        },
+      },
       MuiInput: {
         styleOverrides: {
           root: {

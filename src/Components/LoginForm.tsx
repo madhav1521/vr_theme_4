@@ -1,8 +1,16 @@
-import { Box, Button, Grid, Link, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Link, TextField, Typography, IconButton,Input,InputAdornment,InputLabel, FormControl, } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+
 
 export default function LoginForm() {
+  const [showPassword, setShowPassword] = React.useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+  };
+
   const navigate = useNavigate();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -33,16 +41,26 @@ export default function LoginForm() {
           </Grid>
 
           <Grid item lg={12} className="text">
-            <TextField
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              variant="standard"
-              color="warning"
-              autoComplete="new-password"
-            />
+          <FormControl fullWidth variant="standard">
+                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                    <Input
+                      id="standard-adornment-password"
+                      fullWidth
+                      color="warning"
+                      type={showPassword ? 'text' : 'password'}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <VisibilityOff color="warning"/> : <Visibility color="warning"/>}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
           </Grid>
         </Grid>
 

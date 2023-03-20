@@ -78,11 +78,11 @@ export default function CustomizedMenus(props:any) {
         onClick={handleClick}
         className="menu"
       >
-            <img alt="" src={props.img} />
-            <Typography component="h5" variant="body1" className="jd">
+            <img alt="" src={props.img} className="" />
+            <Typography component="h5" variant="body1" className="profile-name">
               {props.name}
             </Typography>
-            <img src={props.arrow} alt="" />
+            <img src={props.arrow} alt="" className='profile-arrow' />
           
       </Button>
       <StyledMenu
@@ -95,20 +95,13 @@ export default function CustomizedMenus(props:any) {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
+          My Profile
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
-          Duplicate
+          Help
         </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <ArchiveIcon />
-          Archive
-        </MenuItem>
+        
         <MenuItem onClick={()=>{navigate('/');}} disableRipple>
-          <MoreHorizIcon />
           Logout
         </MenuItem>
       </StyledMenu>

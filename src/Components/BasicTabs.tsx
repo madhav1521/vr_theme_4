@@ -48,7 +48,7 @@ export default function BasicTabs(props:any) {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box >
+      <Box className={props.classname}>
         <Tabs
           value={value}
           onChange={handleChange}

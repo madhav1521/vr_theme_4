@@ -86,25 +86,24 @@ const [age, setAge] = React.useState("");
 
             <Grid item xs={12}>
             <Box>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-          fullWidth
-          variant="standard"
-          autoComplete="select"
-          color="warning"
-          className='login-select'
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
+            <FormControl variant="standard" fullWidth>
+                        <InputLabel id="demo-simple-select-standard-label">Country</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          value={age}
+                          onChange={handleChange}
+                          label="Country"
+                          fullWidth
+                          color="warning"
+                          className="login-select"
+                        >
+                          <MenuItem value="India">India</MenuItem>
+                          <MenuItem value={10}>America</MenuItem>
+                          <MenuItem value={20}>Africa</MenuItem>
+                          <MenuItem value={30}>China</MenuItem>
+                        </Select>
+                      </FormControl>
     </Box>
             </Grid>
 
