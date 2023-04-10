@@ -45,7 +45,9 @@ export default function Dashboard() {
           <Header />
           <div className="main-content">
             <Grid container>
+              <Grid item xs={12} >
               <Typography component="h2" variant="h3" className="page-title">Dashboard</Typography>
+            </Grid>
             </Grid>
             <Grid container spacing={4} className="sticker">
               <Grid item lg={6}  className="internal-card">
@@ -64,24 +66,28 @@ export default function Dashboard() {
                   </Grid>
                 </Grid>
               </Grid>
+
+              {/* data graph
+              ---------------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} lg={6} className="data-graph">
                 <Card className="card">
                   <Box>
                     <div className="card-head" >
                       <Typography component="h5" variant="h6" className="card-head">Revenue</Typography>
-                      <Dropdown img="" name="" arrow={dots} />
+                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" />
                     </div>
                     <img src={datagraph} alt="" className="img-fluid" />
                   </Box>
                 </Card>
               </Grid>
-
-              <Grid item xs={12} md={8} lg={9}>
+              {/* Table container
+              ---------------------------------------------------------------------------------------------------------------------------- */}
+              <Grid item xs={12} md={12} lg={9}>
                 <Card className="card tsp">
                   <Box>
                     <div className="card-head" >
                       <Typography component="h5" variant="h6" className="card-head">Top Selling Product</Typography>
-                      <Dropdown img="" name="" arrow={dots} />
+                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" />
                     </div>
                     <TableContainer >
                       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table" >
@@ -89,7 +95,7 @@ export default function Dashboard() {
                           <TableRow 
                               sx={{  'th, td':{paddingLeft:0, paddingRight:0}}}
                           
-                          >
+                              >
                             <TableCell >Product Name</TableCell>
                             <TableCell component="th" align="left">Date</TableCell>
                             <TableCell component="th" align="left">Price</TableCell>
@@ -117,12 +123,14 @@ export default function Dashboard() {
                 </Card>
               </Grid>
 
-              <Grid item  xs={12} md={4} lg={3} >
+                            {/* progress chart
+                            ---------------------------------------------------------------------------------------------------------------------------- */}
+              <Grid item  xs={12} md={12} lg={3} >
                 <Card className="card">
                   <Box>
                     <div className="card-head" >
                       <Typography component="h5" variant="h6" className="card-head">Campaign</Typography>
-                      <Dropdown img="" name="" arrow={dots} />
+                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" />
                     </div>
                     <div className="progress">
                       <div className="progress-content">

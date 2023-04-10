@@ -1,32 +1,10 @@
 import { ThemeProvider } from "@emotion/react";
-import { Search } from "@mui/icons-material";
-import SearchIcon from "@mui/icons-material/Search";
-import {
-  AppBar,
-  Avatar,
-  Box,
-  Button,
-  Card,
-  FormControl,
-  FormHelperText,
-  Grid,
-  IconButton,
-  Input,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Stack,
-  TextField,
-  ToggleButton,
-  ToggleButtonGroup,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import {Box,Button,Link,SelectChangeEvent,ToggleButton,ToggleButtonGroup} from "@mui/material";
 import React, { useState } from "react";
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import { useNavigate } from "react-router-dom";
-import { arrow, brandlogo, notification, profile, search } from "../Assets/Images";
+import { arrow, brandlogo, notification, profile, searchicon } from "../Assets/Images";
 import { dashTheme } from "../dashTheme";
 import Dropdown from "./Dropdown";
 
@@ -46,7 +24,7 @@ export default function Header() {
   };
 
   const [status, setStatus] = React.useState(true)
-  const [search,setSearch] =useState()
+  const [search,setSearch] =React.useState(true)
     function toggle (){
       document.body.classList.toggle('setStatus')
     }
@@ -61,8 +39,8 @@ export default function Header() {
       <ThemeProvider theme={dashTheme}>
       <div className='overlay' onClick={toggle}></div>
         <div className="header">
-          <Box className="leftnav">
-            <img src={brandlogo} alt="" className="brand" />
+          <Box className="leftnavbar">
+            <Link href="/" title="brand-logo"> <img src={brandlogo} alt="" className="brand" /></Link>
             <ToggleButtonGroup
               value={alignment}
               className="toggle-btn"
@@ -76,17 +54,19 @@ export default function Header() {
             </ToggleButtonGroup>
             
             <div className="search-input">
-              <input type="search" className="form-control"  placeholder="Search" ></input>
+              <input type="search" className="form-control "  placeholder="Search" ></input>
             </div>
+            <Button onClick={searchbar} className="btn-close-search btn-close"><CloseRoundedIcon color="warning"/></Button> 
+
             <Button className="search-btn" onClick={searchbar}>
-              <img src={search} alt="search-icon" />
+              <img src={searchicon} alt="search-icon" />
             </Button>
           </Box>
 
-          <Box className="rightnav">
-            <Dropdown img={notification} name="" arrow="" />
+          <Box className="rightnavbar">
+            <Dropdown img={notification} name="" arrow="" classname="menu bell"/>
 
-            <Dropdown img={profile} name="John Doe" arrow={arrow} />
+            <Dropdown img={profile} name="John Doe" arrow={arrow} classname="menu "/>
           </Box>
         </div>
       </ThemeProvider>

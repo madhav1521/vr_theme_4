@@ -25,7 +25,7 @@ export default function LoginForm() {
       <Typography component="h3" variant="h5" className="login-head">
         Log In into your account
       </Typography>
-      <Box component="form" noValidate onSubmit={handleSubmit} marginTop={2}>
+      <Box component="form" noValidate onSubmit={handleSubmit} marginTop={1}>
         <Grid container>
           <Grid item lg={12} >
             <TextField
@@ -55,7 +55,7 @@ export default function LoginForm() {
                             onClick={handleClickShowPassword}
                             onMouseDown={handleMouseDownPassword}
                           >
-                            {showPassword ? <VisibilityOff color="warning"/> : <Visibility color="warning"/>}
+                            {showPassword ? <Visibility color="warning"/>: <VisibilityOff color="warning"/> }
                           </IconButton>
                         </InputAdornment>
                       }
@@ -69,16 +69,15 @@ export default function LoginForm() {
           fullWidth
           disableElevation
           variant="contained"
-          sx={{ mt: 3, mb: 2, textDecoration: "none" }}
           className="login-btn"
           onClick={() => {navigate("/dashboard");}}
         >
           LOG IN
         </Button>
 
-        <Grid container justifyContent="flex-start" className="fp" >
+        <Grid container justifyContent="flex-start"  >
           <Grid item>
-            <Link href="#" variant="body2">
+            <Link href="#" variant="body2" title="forgot-password" className="forgot-password">
               Forget Password?
             </Link>
           </Grid>

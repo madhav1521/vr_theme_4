@@ -47,7 +47,7 @@ export default function BasicTabs(props:any) {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    < >
       <Box className={props.classname}>
         <Tabs
           value={value}
@@ -69,6 +69,6 @@ export default function BasicTabs(props:any) {
       <TabPanel value={value} index={2}>
         {props.panel3}
       </TabPanel>
-    </Box>
+    </>
   );
 }

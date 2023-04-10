@@ -21,17 +21,17 @@ export const innerTheme = createTheme({
                         borderBottom: "0 ",
                     },
                     "&.Mui-disabled": {
-                        borderBottom: "1px dashed white",
+                        borderBottom: "1px dashed #b2b2b2",
                     },
 
 
                 },
                 input:{
                     color:"#FFFFFF",
-                    "&.Mui-disabled": {
-                        color:"#FFFFFF",
-                        },
+                    ".main-content &.Mui-disabled": {
+                        color:"#b2b2b2",
                     },
+                },
             },
         },
         MuiButton: {
@@ -46,8 +46,7 @@ export const innerTheme = createTheme({
         MuiGrid: {
             styleOverrides: {
                 root: {
-                    width: "100%",
-
+                    flexBasis: "100%",
                 },
             },
         },
@@ -55,8 +54,11 @@ export const innerTheme = createTheme({
             styleOverrides: {
                 root: {
                     color: "rgba(179,179,179,1)",
-                    "&.Mui-disabled": {
+                    ".main-content &.Mui-disabled": {
                         color: "#B2B2B2",
+                    },
+                    "&.Mui-focused": {
+                        color: "rgba(179,179,179,1)",
                     },
                 },
             },
@@ -94,11 +96,9 @@ export const innerTheme = createTheme({
                     color: "White",
                     // padding: "0",
                     // marginRight: "30px",
-                    borderBottom: "1px solid #FFFFFF",
                     opacity: 0.5,
                     fontWeight: "600",
                     fontSize: "16px",
-
                     minWidth: "0",
                     minHeight: "55px",
                 },
@@ -108,9 +108,13 @@ export const innerTheme = createTheme({
         MuiTabs: {
             styleOverrides: {
                 indicator: {
-                    borderBottom: "3px solid primary",
-
+                    borderBottom: "3px solid #A555FF",
+                    backgroundColor:"#A555FF",
+                    // marginBottom:"-1px",
                 },
+                root:{
+                    borderBottom:"1px solid rgba(255,255,255,0.5)"
+                }
             },
         },
         MuiSelect: {

@@ -10,22 +10,10 @@ import SignUpForm from "../Components/SignUpForm";
 export default function Login() {
   return (
     <ThemeProvider theme={myTheme}>
-    <div className="login">
-      <Container className="login-page">
-        <Container maxWidth="lg">
-          <Box className="logo">
-            <img src={logo} alt="" />
-          </Box>
-        </Container>
-        <Container maxWidth="lg" className="login-container">
-          <Grid
-            container
-            minWidth="xl"
-            justifyContent="space-between"
-            flexWrap="nowrap"
-            alignItems="center"
-            className="login-main"
-          >
+    <Box className="login">
+      <Container maxWidth="lg" className="login-page">
+            <img src={logo} alt="brand-logo" className="logo" />
+          <Grid container minWidth="xl" justifyContent="space-between" flexWrap="nowrap" alignItems="center" className="login-main" >
             <Grid item className="login-box">
               <BasicTabs classname="loginclass" label1="Login" label2="Sign Up" panel1={<LoginForm />} panel2={<SignUpForm />} />
             </Grid>
@@ -33,14 +21,11 @@ export default function Login() {
               <img src={girl} alt="" className="login-img" />
             </Grid>
           </Grid>
-        </Container>
-        <Container maxWidth="lg" className="copyright">
-          <Typography component="h5" variant="body1" color="white">
+          <Typography component="h5" variant="body1" color="white" className="copyright">
             © 2021 Dummy Company. All rights reserved.
           </Typography>
-        </Container>
       </Container>
-    </div>
+    </Box>
     </ThemeProvider>
   );
 }

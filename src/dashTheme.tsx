@@ -2,6 +2,18 @@ import { createTheme } from "@mui/material";
 import { background } from "./Assets/Images";
 
 export const dashTheme = createTheme({
+  palette: {
+      warning: {
+        main: "#b3b3b3",
+      },
+      primary:{
+        main:"#A555FF"
+      }
+    },
+  
+    typography: {
+      fontFamily: ["Open Sans", "sans-serif"].join(","),
+    },
     components:{
         MuiFormControlLabel: {
         styleOverrides: {
@@ -29,6 +41,7 @@ export const dashTheme = createTheme({
           },
         },
       },
+      
       MuiGrid: {
         styleOverrides: {
           root: {
@@ -98,16 +111,4 @@ export const dashTheme = createTheme({
       },
     },
     
-    palette: {
-        warning: {
-          main: "#b3b3b3",
-        },
-        primary:{
-          main:"#A555FF"
-        }
-      },
-    
-      typography: {
-        fontFamily: ["Open Sans", "sans-serif"].join(","),
-      },
 });

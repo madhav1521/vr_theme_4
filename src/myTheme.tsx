@@ -1,42 +1,31 @@
 import { createTheme } from "@mui/material";
-import { yellow, purple, green } from "@mui/material/colors";
+import { yellow, purple, green, red } from "@mui/material/colors";
 import Box from "@mui/material/Box";
 import pink from "@mui/material/colors/pink";
-// import TextField from "@mui/material/TextField";
-// import InputBase from "@mui/material/InputBase";
-// import FilledInput from "@mui/material/FilledInput";
 
 export const myTheme = createTheme({
+  palette: {
+    warning: {
+      main: "#b3b3b3",
+    },
+    primary: {
+      main: "#A555FF",
+    },
+  },
+
+  typography: {
+    fontFamily: ["Open Sans", "sans-serif"].join(","),
+  },
   components: {
 
-
-    MuiInputBase: {
-      styleOverrides: {
-        input:{
-          disabled:{
-            color:"warning",
-          },
-        },
-      },
-    },
     MuiFormLabel: {
       styleOverrides: {
         root: {
           color: "rgba(179,179,179,1)",
         },
-        
+
       },
     },
-    // MuiInputLabel: {
-    //   styleOverrides: {
-    //     root:{
-    //       color:"warning",
-    //     },
-    //     focused:{color:"white!important",},
-    //   },
-    // },
-
-
     MuiInput: {
       styleOverrides: {
         root: {
@@ -56,12 +45,12 @@ export const myTheme = createTheme({
           ":after": {
             borderBottom: "0 ",
           },
-          
-          input:{
-            color:"white",
-            disabled:{
-            color:"warning",
-          },
+         
+          input: {
+            color: "white",
+            disabled: {
+              color: "warning",
+            },
           },
         },
       },
@@ -69,25 +58,35 @@ export const myTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 0,
+          background:"transparent",
+          borderRadius:0,
+          "&:hover, &:focus, &active": {
+            opacity: "0.8",
+          },
+          
         },
       },
     },
-   
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          flexBasis: "100%",
+        },
+      },
+    },
+
     MuiTableCell: {
       styleOverrides: {
         root: {
-          color: "red",
+          height: "44px",
           borderBottom: "1px solid rgba(255,255,255,0.2)",
         },
         body: {
-          height: "32px",
           fontSize: "15px",
           fontWeight: "400",
           color: "#CFD2DC",
         },
         head: {
-          height: "32px",
           fontSize: "15px",
           fontWeight: "400",
           color: "#9B9B9B",
@@ -95,13 +94,13 @@ export const myTheme = createTheme({
         },
       },
     },
-    // MuiTable: {
-    //   styleOverrides: {
-    //     root: {
-          //  borderColor:"grey",
-    //     },
-    //   },
-    // },
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          marginTop: "20px",
+        },
+      },
+    },
 
     MuiLink: {
       styleOverrides: {
@@ -111,24 +110,33 @@ export const myTheme = createTheme({
         },
       },
     },
-    
-    // MuiInputLabel: {
-    //   styleOverrides: {
-    //     root: {
-    //       paddingLeft:"0",
-    //       // transform:"translate(0,20px) scale(1)",
-          
-    //     },
-    //   },
-    // },
+
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          "&.Mui-focused": {
+            color: "rgba(179,179,179,1)",
+          },
+        },
+      },
+    },
     MuiFormControlLabel: {
       styleOverrides: {
         root: {
-          // paddingBottom:"6px",
           color: "rgba(179,179,179,1)",
         },
       },
     },
+    // MuiFormControl: {
+    //   styleOverrides: {
+    //     root: {
+    //       color: "rgba(179,179,179,1)",
+    //       ".disable-textfield.Mui-disabled":{
+    //         color:red,
+    //       },
+    //     },
+    //   },
+    // },
     MuiCheckbox: {
       styleOverrides: {
         root: {
@@ -147,14 +155,36 @@ export const myTheme = createTheme({
           fontSize: "16px",
           minWidth: "0",
           minHeight: "55px",
+          '&.Mui-selected': {
+            color: "white",
+            opacity: "1",
+          },
         },
-        
+
       },
     },
     MuiTabs: {
       styleOverrides: {
         indicator: {
-            backgroundColor:"#FFFFFF",
+          backgroundColor: "#FFFFFF",
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#0F1E4E",
+          color: "white",
+          boxShadow: "0px 0px 19px rgba(0, 0, 0, 0.17)",
+          padding: "20px",
+          gap: "10px"
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          color: "white",
         },
       },
     },
@@ -168,22 +198,10 @@ export const myTheme = createTheme({
     MuiSelect: {
       styleOverrides: {
         icon: {
-          display:"none",                
+          display: "none",
         },
       },
     },
   },
 
-  palette: {
-    warning: {
-      main: "#b3b3b3",
-    },
-    primary: {
-      main: "#A555FF",
-    },
-  },
-
-  typography: {
-    fontFamily: ["Open Sans", "sans-serif"].join(","),
-  },
 });

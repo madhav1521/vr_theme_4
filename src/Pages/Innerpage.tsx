@@ -36,7 +36,7 @@ import {
 // import useTheme from "@mui/material/styles";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { error, info, upload, valid, warning } from "../Assets/Images";
+import { error, info, searchicon, upload, valid, warning } from "../Assets/Images";
 import BasicTabs from "../Components/BasicTabs";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
@@ -66,10 +66,22 @@ export default function Innerpage() {
   };
 
   const navigate = useNavigate();
-  const [age, setAge] = React.useState("");
+  const [age1, setAge1] = React.useState("");
+  const [age2, setAge2] = React.useState("");
+  const [age3, setAge3] = React.useState("");
+  const [age4, setAge4] = React.useState("");
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+  const handleChange1 = (event: SelectChangeEvent) => {
+    setAge1(event.target.value as string);
+  };
+  const handleChange2 = (event: SelectChangeEvent) => {
+    setAge2(event.target.value as string);
+  };
+  const handleChange3 = (event: SelectChangeEvent) => {
+    setAge3(event.target.value as string);
+  };
+  const handleChange4 = (event: SelectChangeEvent) => {
+    setAge4(event.target.value as string);
   };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -82,19 +94,19 @@ export default function Innerpage() {
   return (
     <>
       <ThemeProvider theme={innerTheme}>
-        <div className="main-container">
-          <div className="leftsection ">
+        <Box className="main-container">
+          <Box className="leftsection ">
             <Sidebar />
-          </div>
-          <div className="rightsection ">
+          </Box>
+          <Box className="rightsection ">
             <Header />
-            <div className="main-content">
+            <Box className="main-content">
               <Grid container>
                 <Typography component="h2" variant="h3" className="page-title">
                   Users
                 </Typography>
               </Grid>
-              <Card className="card">
+              <Card className="card users-page">
                 <Typography component="h4" variant="h5" className="inner-heading" marginBottom="28px">
                   One Column
                 </Typography>
@@ -120,8 +132,8 @@ export default function Innerpage() {
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
-                          value={age}
-                          onChange={handleChange}
+                          value={age1}
+                          onChange={handleChange1}
                           label="Country"
                           fullWidth
                           color="warning"
@@ -142,18 +154,21 @@ export default function Innerpage() {
                       name="textarea"
                       label="Text area"
                       type="textarea"
-                      id="textarea"
                       color="warning"
                       variant="standard"
+                      className="textarea"
+                      id="standard-multiline-static"
+                      multiline
+                      rows={3}
                     />
-                  
+
                   </Grid>
                 </Grid>
                 <Typography component="h4" variant="h5" className="inner-heading">
                   Two Column
                 </Typography>
                 <Grid container spacing={2}>
-                  <Grid item xs={6}>
+                  <Grid item xs={12} sm={6}>
                     <TextField
                       autoComplete="name"
                       name="Name"
@@ -167,7 +182,7 @@ export default function Innerpage() {
                     />
                   </Grid>
 
-                  <Grid item xs={6}>
+                  <Grid item xs={12} sm={6}>
 
                     <FormControl fullWidth variant="standard">
                       <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
@@ -191,7 +206,7 @@ export default function Innerpage() {
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={6}>
+                  <Grid item xs={12} sm={6}>
                     <Box
                       component="form"
                       noValidate
@@ -211,15 +226,15 @@ export default function Innerpage() {
                     </Box>
                   </Grid>
 
-                  <Grid item xs={6}>
+                  <Grid item xs={12} sm={6}>
                     <Box>
                       <FormControl variant="standard" fullWidth>
                         <InputLabel id="demo-simple-select-standard-label">Country</InputLabel>
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
-                          value={age}
-                          onChange={handleChange}
+                          value={age2}
+                          onChange={handleChange2}
                           label="Country"
                           fullWidth
                           color="warning"
@@ -254,13 +269,12 @@ export default function Innerpage() {
                   <Grid item xs={12} sm={4}>
                     <Box
                       component="form"
-                      
                       noValidate
                       autoComplete="off"
                     >
-                      <FormControl disabled fullWidth  variant="standard">
-                        <InputLabel  htmlFor="component-disabled">Disabled</InputLabel>
-                        <Input id="component-disabled" defaultValue="Composed TextField" />
+                      <FormControl disabled fullWidth variant="standard" className="disable-textfield">
+                        <InputLabel htmlFor="component-disabled">Disabled</InputLabel>
+                        <Input id="component-disabled" defaultValue="Disable" color="warning" />
                       </FormControl>
                     </Box>
                   </Grid>
@@ -283,8 +297,6 @@ export default function Innerpage() {
                         autoComplete="email"
                       />
                     </Box>
-
-
                   </Grid>
                 </Grid>
                 <Typography component="h4" variant="h5" className="inner-heading">
@@ -311,8 +323,8 @@ export default function Innerpage() {
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
-                          value={age}
-                          onChange={handleChange}
+                          value={age3}
+                          onChange={handleChange3}
                           label="Country"
                           fullWidth
                           color="warning"
@@ -329,16 +341,12 @@ export default function Innerpage() {
                   <Grid item xs={12} sm={6} lg={3}>
                     <Box
                       component="form"
-                      // sx={{
-                      //   // '& > :not(style)': { m: 1 },
-                      //   borderBottom: "1px dashed rgba(178,178,178,0.6)",
-                      // }}
                       noValidate
                       autoComplete="off"
                     >
                       <FormControl disabled fullWidth variant="standard">
-                        <InputLabel  htmlFor="component-disabled">Disabled</InputLabel>
-                        <Input  id="component-disabled" defaultValue="Disabled" />
+                        <InputLabel htmlFor="component-disabled">Disabled</InputLabel>
+                        <Input id="component-disabled" defaultValue="Disabled" />
                       </FormControl>
                     </Box>
                   </Grid>
@@ -350,8 +358,8 @@ export default function Innerpage() {
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
-                          value={age}
-                          onChange={handleChange}
+                          value={age4}
+                          onChange={handleChange4}
                           label="Country"
                           fullWidth
                           color="warning"
@@ -372,29 +380,31 @@ export default function Innerpage() {
                 <Typography component="h4" variant="h5" className="card-head">
                   File Upload
                 </Typography>
-                <Stack direction="row" alignItems="center" spacing={2}>
+
+                <Stack direction="row" alignItems="center" spacing={2} className="upload-content">
                   <Button variant="outlined" component="label" className="upload-btn" >
                     <img src={upload} alt="" /> &nbsp; Upload
                     <input hidden accept="image/*" multiple type="file" />
                   </Button>
-                  <IconButton color="primary" aria-label="upload picture" component="label">
-                    <input hidden accept="image/*" type="file" />
-                  </IconButton>
+                  <Typography component="h4" variant="h6" className=" nis">
+                    No item Selected
+                  </Typography>
                 </Stack>
                 <Typography component="h4" variant="h5" className="card-head">
                   Radio Button
                 </Typography>
 
 
-                <Grid item xs={12} marginBottom="40px">
-                  <FormControl>
+                <Grid item xs={12} >
+                  <FormControl className="radio-check">
                     <RadioGroup
                       row
                       aria-labelledby="demo-row-radio-buttons-group-label"
                       name="row-radio-buttons-group"
+                      defaultValue="option1"
                     >
-                      <FormControlLabel value="female" control={<Radio />} label="Option 1" className="radio-check"/>
-                      <FormControlLabel value="male" control={<Radio />} label="OPtion 2" className="radio-check"/>
+                      <FormControlLabel value="option1" control={<Radio />} label="Option 1" />
+                      <FormControlLabel value="option2" control={<Radio />} label="Option 2" />
                     </RadioGroup>
                   </FormControl>
                 </Grid>
@@ -406,32 +416,32 @@ export default function Innerpage() {
                 <Grid item xs={12}>
                   <FormControlLabel
                     control={
-                      <Checkbox color="primary"/>
-                    } className="radio-check"
+                      <Checkbox color="primary" />
+                    }
                     label="Option 1"
                   />
                   <FormControlLabel
                     control={
-                      <Checkbox color="primary"/>
-                    } className="radio-check"
+                      <Checkbox color="primary" />
+                    }
                     label="Option 2"
                   />
                 </Grid>
 
-                <div className="validation-notes">
-                  <div className="text-message text-danger">
+                <Box className="validation-notes">
+                  <Box className="text-message text-danger">
                     <img src={error} alt="" /> This is an error Message
-                  </div>
-                  <div className="text-message text-warn">
+                  </Box>
+                  <Box className="text-message text-warn">
                     <img src={warning} alt="" /> This is a warning message!
-                  </div>
-                  <div className="text-message text-info">
+                  </Box>
+                  <Box className="text-message text-info">
                     <img src={info} alt="" /> This is an information message!
-                  </div>
-                  <div className="text-message text-success">
+                  </Box>
+                  <Box className="text-message text-success">
                     <img src={valid} alt="" /> This is an Success message!
-                  </div>
-                </div>
+                  </Box>
+                </Box>
                 <Typography component="h4" variant="h5" className="inner-heading">
                   Call to Action
                 </Typography>
@@ -452,7 +462,6 @@ export default function Innerpage() {
                   Secondary
                 </Button>
                 <Dialog
-                  fullScreen={fullScreen}
                   open={open}
                   onClose={handleClose}
                   aria-labelledby="responsive-dialog-title"
@@ -461,7 +470,7 @@ export default function Innerpage() {
                     {"Do you Want to click me?"}
                   </DialogTitle>
                   <DialogContent>
-                    <DialogContentText>
+                    <DialogContentText color="white">
                       Secondary button clicked!!
                     </DialogContentText>
                   </DialogContent>
@@ -490,9 +499,9 @@ export default function Innerpage() {
                 />
 
               </Card>
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Box>
+        </Box>
       </ThemeProvider>
     </>
   );

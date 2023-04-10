@@ -1,6 +1,6 @@
-import { Box, Grid, Typography } from "@mui/material";
+import {Box, Link, Typography } from "@mui/material";
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   brandlogo,
   dashboard,
@@ -18,11 +18,10 @@ import {
 } from "../Assets/Images";
 
 export default function Sidebar() {
-  const navigate = useNavigate();
   return (
     <>
-      <div className="sidebar">
-          <img src={brandlogo} alt="" className="brand"/>
+      <Box className="sidebar">
+          <Link href="/" title="brand-logo"> <img src={brandlogo} alt="" className="brand"/></Link>
           <NavLink to="/dashboard" className="sidelinks" title="Dashboard">
             <img src={dashboard} alt="" className="default" />
             <img src={dashboardnew} alt="" className="active-img" />
@@ -53,7 +52,7 @@ export default function Sidebar() {
             <img src={settingnew} alt="" className="active-img" />
             <Typography className="text-default">Settings</Typography>
           </NavLink>
-      </div>
+      </Box>
     </>
   );
 }

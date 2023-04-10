@@ -5,7 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import { ButtonGroup, Icon } from '@mui/material'
+import { ButtonGroup, Icon, IconButton, Input, InputAdornment, Typography } from '@mui/material'
 import Button from '@mui/material/Button';
 import { NavLink, useNavigate } from 'react-router-dom';
 import SendIcon from '@mui/icons-material/Send';
@@ -13,6 +13,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import styled from "@emotion/styled";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { myTheme } from '../myTheme';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export default function LoginForm() {
 //   const inputStyle = { WebkitBoxShadow: "0 0 0 1000px white inset" };
@@ -22,6 +23,13 @@ const [age, setAge] = React.useState("");
     const handleChange = (event: SelectChangeEvent) => {
       setAge(event.target.value as string);
     };
+
+    const [showPassword, setShowPassword] = React.useState(false);
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+    };
+    
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -35,7 +43,7 @@ const [age, setAge] = React.useState("");
       <ThemeProvider theme={myTheme}>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={6} >
               <TextField
                 autoComplete="given-name"
                 name="firstName"
@@ -48,7 +56,7 @@ const [age, setAge] = React.useState("");
                 autoFocus
               />
             </Grid>
-            <Grid item xs={12} sm={6} >
+            <Grid item xs={6} >
               <TextField
                 fullWidth
                 id="lastName"
@@ -72,41 +80,27 @@ const [age, setAge] = React.useState("");
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                color="warning"
-                variant="standard"
-                autoComplete="new-password"
-              />
+            <FormControl fullWidth variant="standard">
+                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                    <Input
+                      id="standard-adornment-password"
+                      fullWidth
+                      color="warning"
+                      type={showPassword ? 'text' : 'password'}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <Visibility color="warning"/> : <VisibilityOff color="warning"/>}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
             </Grid>
-
-            <Grid item xs={12}>
-            <Box>
-            <FormControl variant="standard" fullWidth>
-                        <InputLabel id="demo-simple-select-standard-label">Country</InputLabel>
-                        <Select
-                          labelId="demo-simple-select-standard-label"
-                          id="demo-simple-select-standard"
-                          value={age}
-                          onChange={handleChange}
-                          label="Country"
-                          fullWidth
-                          color="warning"
-                          className="login-select"
-                        >
-                          <MenuItem value="India">India</MenuItem>
-                          <MenuItem value={10}>America</MenuItem>
-                          <MenuItem value={20}>Africa</MenuItem>
-                          <MenuItem value={30}>China</MenuItem>
-                        </Select>
-                      </FormControl>
-    </Box>
-            </Grid>
-
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
@@ -129,9 +123,12 @@ const [age, setAge] = React.useState("");
 
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
+              <Typography variant='body2' className='sign-in'>
+                Already have an account?
+                <Link href="#" variant="body2" title='Lets sign-in' > 
+                  Sign in
+                </Link>
+              </Typography>
             </Grid>
           </Grid>
         </Box>
