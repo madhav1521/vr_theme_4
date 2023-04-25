@@ -74,7 +74,7 @@ export default function Dashboard() {
                   <Box>
                     <div className="card-head" >
                       <Typography component="h5" variant="h6" className="card-head">Revenue</Typography>
-                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" />
+                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" title='More menu' />
                     </div>
                     <img src={datagraph} alt="" className="img-fluid" />
                   </Box>
@@ -87,7 +87,7 @@ export default function Dashboard() {
                   <Box>
                     <div className="card-head" >
                       <Typography component="h5" variant="h6" className="card-head">Top Selling Product</Typography>
-                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" />
+                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" title='More menu' />
                     </div>
                     <TableContainer >
                       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table" >
@@ -130,7 +130,7 @@ export default function Dashboard() {
                   <Box>
                     <div className="card-head" >
                       <Typography component="h5" variant="h6" className="card-head">Campaign</Typography>
-                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" />
+                      <Dropdown img="" name="" arrow={dots} classname="menu dots-img" title='More menu' />
                     </div>
                     <div className="progress">
                       <div className="progress-content">

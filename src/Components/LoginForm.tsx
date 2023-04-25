@@ -71,6 +71,7 @@ export default function LoginForm() {
           variant="contained"
           className="login-btn"
           onClick={() => {navigate("/dashboard");}}
+          title="Login-button"
         >
           LOG IN
         </Button>

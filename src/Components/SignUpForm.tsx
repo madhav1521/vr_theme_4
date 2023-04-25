@@ -117,6 +117,7 @@ const [age, setAge] = React.useState("");
                     sx={{ mt: 3, mb: 2, textDecoration:'none'}}
                     className='login-btn'
                     onClick={()=>{navigate('/dashboard') }}
+                    title='signup-button'
                 >
                     Sign Up <SendIcon sx={{ ml: 2 }}/>
                 </Button>

@@ -55,9 +55,9 @@ export default function BasicTabs(props:any) {
           aria-label="basic tabs example"
           
         >
-          <Tab label={props.label1} className="tabs" {...a11yProps(0)} />
-          <Tab label={props.label2} className="tabs" {...a11yProps(1)} />
-          <Tab label={props.label3} className="tabs" {...a11yProps(2)} />
+          <Tab title='Tab 1' label={props.label1} className="tabs" {...a11yProps(0)} />
+          <Tab title='Tab 2' label={props.label2} className="tabs" {...a11yProps(1)} />
+          <Tab title='Tab 3' label={props.label3} className="tabs" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

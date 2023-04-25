@@ -29,10 +29,10 @@ option:not(:checked) { color: black; }
 ---------------------------------------------------------------------------------------------------------------------------------- */
 /* .App{background-color: #051444;height: 100vh;background-image: url('./Assets/Images/bg-image.svg');
     background-repeat: no-repeat;background-position: center;background-size: cover;} */
-.login{background-color: #051444;min-height: 100vh;background-image: url('./Assets/Images/bg-image.svg');
+.login{background-color: #051444;min-height: 100vh;background-image: url('./Assets/Images/back-ground.png');
         background-repeat: no-repeat;background-position: center;background-size: cover;}
         /* .login .login-page{margin: auto;} */
-.login .login-page .logo{padding-top: 100px;}
+.login .login-page .logo{padding-top: 100px;max-width: 100%;}
 .login .login-page .login-main{margin-top: 25px;}
 .login .login-page    .login-box{position: relative;z-index: 2;margin-right: 207px; padding: 20px 40px 38px 42px;height: max-content;max-width: 425px;  
     background: linear-gradient(90.11deg, #E239F1 0%, #2296CB 101.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));  }
@@ -79,7 +79,7 @@ option:not(:checked) { color: black; }
 
 /* Header Starts
 ---------------------------------------------------------------------------------------------------------------------------------- */
-.header{padding-right: 15px; position: sticky; top: 0 ;z-index: 10;background-color: rgba(15,30,78,0.8); backdrop-filter: blur(12px);}
+.header{padding-right: 15px; position: sticky; top: 0 ;z-index: 10;background-color: rgba(15,30,78,0.8); backdrop-filter: blur(12px);box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);}
 .header .rightnavbar .menu{background: transparent;height: 50px;}
 .header .rightnavbar .bell{margin-right: 15px;border-radius: 50px;min-width: 52px;}
 .header .rightnavbar .menu:hover, .header .rightnavbar .menu:focus,.header .rightnavbar .menu:active{background: rgba(5, 20, 68, 0.9);}
@@ -205,7 +205,7 @@ option:not(:checked) { color: black; }
 
 }
 @media (max-width:600px) {
-    .login .login-page    .login-main .login-img{display: none;}
+    .login .login-page .login-main .login-img{display: none;}
 
     .main-container .rightsection .main-content .users-page{padding: 20px 15px 28px;}
     .main-container .rightsection .main-content .card .progress {flex-direction: column; }
@@ -232,5 +232,5 @@ option:not(:checked) { color: black; }
     .login .login-page .copyright{font-size: 12px;}
 }
 @media (min-width:1800px) {
-    .login .login-page{display: flex; flex-direction: column; justify-content: center;height: 100vh;}
+    .login .login-page{display: flex; flex-direction: column; justify-content: center;height: 100vh;align-items:flex-start;}
 }

@@ -382,7 +382,7 @@ export default function Innerpage() {
                 </Typography>
 
                 <Stack direction="row" alignItems="center" spacing={2} className="upload-content">
-                  <Button variant="outlined" component="label" className="upload-btn" >
+                  <Button variant="outlined" component="label" className="upload-btn" title="Upload-files" >
                     <img src={upload} alt="" /> &nbsp; Upload
                     <input hidden accept="image/*" multiple type="file" />
                   </Button>
@@ -447,6 +447,7 @@ export default function Innerpage() {
                 </Typography>
                 <Button
                   type="submit"
+                  title="Primary-button"
                   disableElevation
                   variant="contained"
                   sx={{ textDecoration: "none", border: 0, padding: "12px 30px" }}
@@ -458,7 +459,7 @@ export default function Innerpage() {
                   Primary
                 </Button>
 
-                <Button sx={{ ml: 5, textDecoration: "none", padding: "12px 30px" }} variant="outlined" onClick={handleClickOpen}>
+                <Button sx={{ ml: 5, textDecoration: "none", padding: "12px 30px" }} title="Secondary-button" variant="outlined" onClick={handleClickOpen}>
                   Secondary
                 </Button>
                 <Dialog

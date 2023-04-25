@@ -47,6 +47,7 @@ export default function Header() {
               exclusive
               onChange={handleAlignment}
               aria-label="text alignment"
+              title="Toggle-button" 
             >
               <ToggleButton value="left" aria-label="left aligned" onClick={toggle}>
                 <FormatAlignLeftIcon  color="warning" />
@@ -56,17 +57,17 @@ export default function Header() {
             <div className="search-input">
               <input type="search" className="form-control "  placeholder="Search" ></input>
             </div>
-            <Button onClick={searchbar} className="btn-close-search btn-close"><CloseRoundedIcon color="warning"/></Button> 
+            <Button title="close-searchbar" onClick={searchbar} className="btn-close-search btn-close"><CloseRoundedIcon color="warning"/></Button> 
 
-            <Button className="search-btn" onClick={searchbar}>
-              <img src={searchicon} alt="search-icon" />
-            </Button>
           </Box>
 
           <Box className="rightnavbar">
-            <Dropdown img={notification} name="" arrow="" classname="menu bell"/>
+            <Button title="search-button" className="search-btn bell menu" onClick={searchbar}>
+              <img src={searchicon} alt="search-icon" />
+            </Button>
+            <Dropdown img={notification} name="" arrow="" classname="menu bell" title='notification-button'/>
 
-            <Dropdown img={profile} name="John Doe" arrow={arrow} classname="menu "/>
+            <Dropdown img={profile} name="John Doe" arrow={arrow} classname="menu " title='profile-menu'/>
           </Box>
         </div>
       </ThemeProvider>

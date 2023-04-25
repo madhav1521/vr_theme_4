@@ -77,6 +77,7 @@ export default function CustomizedMenus(props:any) {
         disableElevation
         onClick={handleClick}
         className={props.classname}
+        title={props.title}
       >
             <img alt="" src={props.img} className="" />
             <Typography component="h5" variant="body1" className="profile-name">
